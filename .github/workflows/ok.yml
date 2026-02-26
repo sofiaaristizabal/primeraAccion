@@ -1,0 +1,15 @@
+name: Push ok
+
+on: 
+    push:
+        branches: ["main"]
+    workflow_dispatch:
+jobs:
+    say_ok: #nombre del workflow
+        runs-on: ubuntu-latest
+        steps: 
+            - name: checkout
+              uses: actions/checkout@v4
+            - name: Decir Ok en consola
+              run: |
+                echo "OK se ejecuto el workflow"
